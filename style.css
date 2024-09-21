@@ -4,20 +4,25 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: #222;
   font-family: 'Open Sans', sans-serif;
   font-size: 120%;
+  background-color: #222;
+  background-image: url('./bg3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
 }
 
 .card {
-  background: url("./bg3.jpg");
-  background-size: cover;
+  background: url('./bg3.jpg');
   color: white;
   padding: 2em;
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
   margin: 1em;
+  backdrop-filter: blur(10px);
 }
 
 .search {
@@ -83,4 +88,71 @@ h1.temp {
   position: absolute;
   top: 0;
   left: 20px;
+}
+
+.extended-forecast {
+  margin-top: 2em;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.forecast-day {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#geolocation-btn, #unit-toggle {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.temp-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.unit {
+  font-size: 0.5em;
+  margin-left: 0.5em;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1em;
+  }
+  
+  body {
+    font-size: 100%;
+  }
+}
+
+input.search-bar::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+#city-suggestions option {
+  background-color: #7c7c7c2b;
+  color: white;
+  padding: 5px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
 }
